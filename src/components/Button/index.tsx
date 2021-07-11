@@ -1,20 +1,22 @@
-import React, { ButtonHTMLAttributes } from 'react';
-import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import React from 'react';
+import { Text, TouchableOpacityProps, TouchableOpacity } from 'react-native';
+
 import styles from './styles';
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & TouchableOpacityProps
+type ButtonProps = TouchableOpacityProps & {
+	title: string;
+}
 
-export default function Button({ title, ...props }: ButtonProps) {
+export default function Button({title, ...props}: ButtonProps) {
 	return (
-	<TouchableOpacity 
-		style={styles.button}
-		activeOpacity={0.6}
-		{...props}
-	>
-		<Text style={styles.buttonText}>
-			{title}
-		</Text>
-	</TouchableOpacity>
+		<TouchableOpacity 
+			style={styles.container}
+			{...props}
+		>
+			<Text style={styles.text}>
+				{title}
+			</Text>
+		</TouchableOpacity>
 	)
 }
 
