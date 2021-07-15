@@ -15,7 +15,7 @@ type PlantProps = RectButtonProps & {
   }
 }
 
-export const PlantCardPrimary = ({data, ...props}: PlantProps) => {
+const PlantCardPrimary = ({data, ...props}: PlantProps) => {
   return (
     <RectButton
       style={styles.container}
@@ -32,3 +32,5 @@ export const PlantCardPrimary = ({data, ...props}: PlantProps) => {
     </RectButton>
   )
 }
+
+export default PlantCardPrimary;
