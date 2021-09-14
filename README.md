@@ -52,7 +52,7 @@ Techs that was used to build the project
 # Run
 $ npm install -g json-server 
 # Get the ip from your PC
-# NOTE: If this code doesn't work, try other, simply do a search on google and discover how to find your ip 😜
+# NOTE: If this code doesn't work, simply do a search on google and discover how to find your ip 😜
 $ ipconfig getifaddr en0  
 # inside of package.json change the following line of code and where is '<IP_ADDRESS>' change to your IP.
 $ json-server ./src/services/server.json --host <IP_ADDRESS> --port 3333 --delay 700
