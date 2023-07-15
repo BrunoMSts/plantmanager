@@ -12,12 +12,6 @@ pipeline {
         sh 'yarn install'
       }
     }
-
-    stage('Run Dependency Check') {
-      steps {
-        sh 'yarn audit'
-      }
-    }
     stage ("Dependency check") {
       steps {
         echo "Escaneando"
