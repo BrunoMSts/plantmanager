@@ -19,7 +19,9 @@ pipeline {
         script {
           def scannerHome = tool 'sonarqube-scanner';
           withSonarQubeEnv() {
-            sh "${scannerHome}/bin/sonar-scanner"
+            sh "npm install sonar-scanner"
+            sh "npm run sonar"
+            // sh "${scannerHome}/bin/sonar-scanner"
           }
         }
       }
