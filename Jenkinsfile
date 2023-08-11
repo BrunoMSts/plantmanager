@@ -34,4 +34,4 @@ pipeline {
     //   }
     // }
   }
-} https://53d7-2804-29b8-515b-90f6-d4c5-4fc5-c065-6b61.ngrok-free.app
+}
