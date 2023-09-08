@@ -44,16 +44,16 @@ pipeline {
     }
 
 
-    stage('Criar outlier') {
-      steps {
-        script {
-          def sleepTime = 15 * 60 * 1000
-          echo "Esperando 15 minutos"
+    // stage('Criar outlier') {
+    //   steps {
+    //     script {
+    //       def sleepTime = 15 * 60 * 1000
+    //       echo "Esperando 15 minutos"
 
-          sleep time: sleepTime, unit: 'MILLISECONDS'
-        }
-      }
-    }
+    //       sleep time: sleepTime, unit: 'MILLISECONDS'
+    //     }
+    //   }
+    // }
 
   }
 }
