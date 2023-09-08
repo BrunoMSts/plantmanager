@@ -11,9 +11,14 @@ pipeline {
         echo "Iniciando a Pipe"
       }
     }
-    stage('Install Dependencies') {
+    stage('Install Npm Dependencies') {
       steps {
         sh 'npm install'
+      }
+    }
+
+    stage('Install Yarn Dependencies') {
+      steps {
         sh 'yarn install'
       }
     }
