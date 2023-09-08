@@ -17,12 +17,6 @@ pipeline {
       }
     }
 
-    stage('Install Yarn Dependencies') {
-      steps {
-        sh 'yarn install'
-      }
-    }
-
     stage('Criar outlier') {
       steps {
         script {
