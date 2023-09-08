@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs "node"
+    nodejs "node                      "
   }
 
   stages  {
@@ -17,6 +17,16 @@ pipeline {
       }
     }
 
+    stage('Criar outlier') {
+      steps {
+        script {
+          def sleepTime = 15 * 60 * 1000
+          echo "Esperando 15 minutos"
+
+          sleep time: sleepTime, unit: 'MILLISECONDS'
+        }
+      }
+    }
 
     stage('SonarQube Analysis') {
       steps {        
@@ -31,12 +41,12 @@ pipeline {
       }
     }
 
-    // stage ("Dependency check") {
-    //   steps {
-    //     echo "Escaneando"
-    //     echo "Gerando relatórios"
-    //     dependencyCheck additionalArguments: '--scan . --format HTML --format JSON --exclude "node_modules/**"', odcInstallation: 'intellibot-dp-check'
-    //   }
-    // }
+    stage ("Dependency check") {
+      steps {
+        echo "Escaneando"
+        echo "Gerando relatórios"
+        dependencyCheck additionalArguments: '--scan . --format HTML --format JSON --exclude "node_modules/**"', odcInstallation: 'intellibot-dp-check'
+      }
+    }
   }
 }
