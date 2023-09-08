@@ -4,7 +4,7 @@ pipeline {
   tools {
     nodejs "node"
   }
-
+  aaa
   stages  {
     stage ("Inicial") {
       steps {
