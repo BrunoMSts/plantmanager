@@ -44,7 +44,7 @@ pipeline {
       steps {
         echo "Escaneando"
         echo "Gerando relatórios"
-        dependencyCheck additionalArguments: '--scan . --format HTML --format JSON --exclude "node_modules/**"', odcInstallation: 'intellibot-dp-check'
+        dependencyCheck additionalArguments: '--format HTML --format JSON --exclude "node_modules/**"', odcInstallation: 'intellibot-dp-check'
       }
     }
   }
