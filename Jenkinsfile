@@ -11,6 +11,12 @@ pipeline {
         echo "Iniciando a Pipe"
       }
     }
+    stage ("Limpar workspace") {
+      steps {
+        echo "Limpando workspace ..."
+        deleteDir()
+      }
+    }
     stage('Install Npm Dependencies') {
       steps {
         sh 'npm install'
