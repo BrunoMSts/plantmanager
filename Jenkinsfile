@@ -23,19 +23,7 @@ pipeline {
         sh 'yarn install'
       }
     }
-    
-
-    // stage('Criar outlier') {
-    //   steps {
-    //     script {
-    //       def sleepTime = 15 * 60 * 1000
-    //       echo "Esperando 15 minutos"
-
-    //       sleep time: sleepTime, unit: 'MILLISECONDS'
-    //     }
-    //   }
-    // }
-
+  
     stage('SonarQube Analysis') {
       steps {        
         script {
@@ -51,8 +39,21 @@ pipeline {
       steps {
         echo "Escaneando"
         echo "Gerando relatórios"
-        dependencyCheck additionalArguments: '--scan . --format HTML --format JSON --exclude "node_modules/**"', odcInstallation: 'intellibot-dp-check'
+        dependencyCheck additionalArguments: '--scan ./package-lock.json --format HTML --format JSON --exclude "node_modules/**"', odcInstallation: 'intellibot-dp-check'
       }
     }
+
+
+    stage('Criar outlier') {
+      steps {
+        script {
+          def sleepTime = 15 * 60 * 1000
+          echo "Esperando 15 minutos"
+
+          sleep time: sleepTime, unit: 'MILLISECONDS'
+        }
+      }
+    }
+
   }
 }
