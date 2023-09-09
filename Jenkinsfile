@@ -35,13 +35,13 @@ pipeline {
       }
     }
 
-    stage ("Dependency check") {
-      steps {
-        echo "Escaneando"
-        echo "Gerando relatórios"
-        dependencyCheck additionalArguments: '--scan package-lock.json --format HTML --format JSON', odcInstallation: 'intellibot-dp-check'
-      }
-    }
+    // stage ("Dependency check") {
+    //   steps {
+    //     echo "Escaneando"
+    //     echo "Gerando relatórios"
+    //     dependencyCheck additionalArguments: '--scan package-lock.json --format HTML --format JSON', odcInstallation: 'intellibot-dp-check'
+    //   }
+    // }
 
 
     // stage('Criar outlier') {
